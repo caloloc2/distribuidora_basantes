@@ -1,3 +1,4 @@
+var acciones = false;
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -68,5 +69,15 @@ $('document').ready(function(){
 	}
 	if(isMobile.iOS()) {
 	  console.log('Esto es un dispositivo iOS');
+	}
+})
+
+$('#acciones').click(function(){
+	if (acciones){
+		$('#menu_acciones').fadeOut(150);
+		acciones = false;
+	}else{
+		$('#menu_acciones').fadeIn(150);
+		acciones = true;
 	}
 })
