@@ -8,7 +8,7 @@ $('document').ready(function(){
 		fading: false, // For fading/sliding effect
 		easing: 'cubic-bezier(.694, .0482, .335, 1)', // For easing
 		transitionDuration: 400, // Duration of slide transition
-		autoplay: false, // Duh...
+		autoplay: true, // Duh...
 		slideDuration: 3000, // Duration between each slide change in autoplay
 		controls: true, // For visibility of nav-arrows
 		controlsWrapper: 'div.jcider-nav', // Element for nav wrapper
