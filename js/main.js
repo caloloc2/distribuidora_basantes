@@ -66,7 +66,9 @@ $('document').ready(function(){
 	}*/
 	if(isMobile.Android()) {
 	  console.log('Esto es un dispositivo Android');
+	  $("#localizar").attr("href", "geo:-0.216904,-78.514287")
 	}
+	
 	if(isMobile.iOS()) {
 	  console.log('Esto es un dispositivo iOS');
 	}
