@@ -21,7 +21,7 @@ var isMobile = {
 };
 
 $('document').ready(function(){
-	$('#cargando').fadeOut(250);
+	$('#cargando').fadeOut(850);
 	$('#slider').jcider({
 		looping: true, // For looping
 		visibleSlides: 1, // Visible no. of slides
