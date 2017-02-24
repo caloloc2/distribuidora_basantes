@@ -94,6 +94,9 @@ body
 					margin 0
 					padding 0
 					width 100%
+		
+		#menu
+			display none
 	
 		#opciones
 			margin 0
@@ -293,4 +296,87 @@ body
 				font-family negrita
 				font-size 16px
 				color red				
+
+
+@media screen and (max-width: 1600px) and (min-width: 600px)
+
+	body
+		background white
 		
+		#cabecera
+			margin 0
+			padding 1em 3em
+			border-bottom 1px solid rgba(0,0,0,0.2)
+			position fixed
+			top 0
+			left 0
+			right 0
+			background white
+			z-index 10000
+			
+			#logo, #menu, #opciones
+				display inline-block
+				vertical-align middle
+			
+			#logo 
+				
+				figure
+					width 80px
+			
+			#menu
+				margin 0
+				padding 0 4em
+				list-style none
+				
+				li 
+					margin 0 
+					padding 0 0.8em
+					display inline-block
+					border-right 1px solid #c5c5c5
+					
+					a 
+						text-decoration none
+						transition all 0.3s linear
+						font-family 'condensada'
+						font-size 18px
+						color #a0a0a0
+						
+					a:hover
+						color red
+				
+				li:last-child
+					border-right 0px
+			
+			#opciones
+				float right
+				margin 0
+				padding 1em 0
+				
+				#redes
+					
+					li 
+						
+						a 
+							transition all 0.3s linear
+						a:hover
+							color red
+		
+		#seccion
+			
+			.contenido				
+				
+				#productos
+					
+					.item
+						width 29%
+						display inline-block
+						vertical-align top
+						cursor pointer
+						
+					.item:hover
+						
+						.barra
+							
+							.precio
+								color black
+								transition all 0.2s linear
