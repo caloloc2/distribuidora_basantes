@@ -21,6 +21,7 @@ var isMobile = {
 };
 
 $('document').ready(function(){
+	//initMap();
 	$('#cargando').fadeOut(850);
 	$('#slider').jcider({
 		looping: true, // For looping
@@ -86,3 +87,15 @@ $('#acciones').click(function(){
 		acciones = true;
 	}
 })
+
+function Destacados(){
+	$('html, body').animate({scrollTop:700}, 'slow');
+}
+
+function Inicio(){
+	$('html, body').animate({scrollTop:0}, 'slow');
+}
+
+function Mapa(){
+	$('html, body').animate({scrollTop:1798}, 'slow');
+}

@@ -39,10 +39,10 @@
             </id>
 
             <ul id="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Ub&iacute;canos</a></li>
-                <li><a href="#">Productos Destacados</a></li>
-                <li><a href="#">Cont&aacute;ctanos</a></li>
+                <li><a href="#" onclick="Inicio(); return false;">Inicio</a></li>
+                <li><a href="#" onclick="Destacados(); return false;">Productos Destacados</a></li>
+                <li><a href="#" onclick="Mapa(); return false;">Ub&iacute;canos</a></li>
+                <li><a href="mailto:edison_jd9basantes@hotmail.com">Cont&aacute;ctanos</a></li>
             </ul>
 
             <div id="opciones">
@@ -166,6 +166,9 @@
         </div> -->
 
         
+        <div id="mapa"></div>
+
+        
         <a href="#" class="icon-dots-three-vertical" id="acciones"></a>
         <ul id="menu_acciones" style="display: none;">
             <li><a id="localizar" href="#" class="icon-location-pin"></a></li>
@@ -192,6 +195,27 @@
             <p>Hecho con <span class="icon-heart"></span> - Nibemi.com</p>
         </div>
 
+<script>
+  function initMap() {
+    var myLatLng = {lat: -0.216922, lng: -78.514336};
+
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('mapa'), {
+      center: myLatLng,
+      scrollwheel: false,
+      zoom: 18
+    });
+
+    // Create a marker and set its position.
+    var marker = new google.maps.Marker({
+      map: map,
+      position: myLatLng,
+      title: 'Distribuidora Basantes'
+    });
+  }
+
+</script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5vJEqltINZY95AvLFA2Htsl6QjFOYWnw&callback=initMap" async defer></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
