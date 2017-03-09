@@ -38,6 +38,10 @@
             <p>No se ha registrado ning&uacute;n producto.</p>
         </div>
 
+        <div id="mensaje">
+            <p id="texto_mensaje">asdfasdfs</p>
+        </div>
+
         <div id="eliminar">
             <p>Desea realmente eliminar esta imagen?</p>
             <input type="hidden" id="id_destacado_eliminar">
@@ -75,7 +79,27 @@
     }
 
     function Mostrar(id){
+        $.ajax({
+            url: 'includes/mostrar.php',
+            data:{
+                id: id
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function(datos) {
+                console.log(datos);
+                Mensaje('Se ha cambiado la vista del producto en la web.');
+                Busqueda();                
+            }
+        });
+    }
 
+    function Mensaje(texto){
+        $('#texto_mensaje').html(texto);
+        $('#mensaje').fadeIn(300);
+        setTimeout(function(){
+            $('#mensaje').fadeOut(300);
+        }, 3000);
     }
 
     function Editar(id){
