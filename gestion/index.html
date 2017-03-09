@@ -42,7 +42,7 @@
             <p>Desea realmente eliminar esta imagen?</p>
             <ul>
                 <li><a href="#"><span class="icon-done"></span> Si</a></li>
-                <li><a href="#"><span class="icon-close"></span> Cancelar</a></li>
+                <li><a href="#" id='cerrar_eliminar'><span class="icon-close"></span> Cancelar</a></li>
             </ul>
         </div>
         
@@ -80,4 +80,8 @@
     function Eliminar(id){
         $('#eliminar').fadeIn(300);
     }
+
+    $('#cerrar_eliminar').click(function(){
+        $('#eliminar').fadeOut(300);   
+    })
 </script>
