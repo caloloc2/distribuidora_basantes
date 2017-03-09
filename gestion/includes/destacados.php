@@ -15,12 +15,12 @@ try{
         		<figure><img src="../img/destacados/<?= $linea['imagen']; ?>" alt="<?= $linea['descripcion']; ?>"></figure>
         		<ul class="opciones">
         			<?php if ($linea['estado']==0){ ?>
-						<li><a href="#" class="icon-visibility"></a></li>
+						<li><a href="#" onclick="Mostrar(<?= $linea['id_destacado']; ?>); return false;" class="icon-visibility"></a></li>
         			<?php }else{ ?>
-						<li><a href="#" class="icon-visibility_off"></a></li>
+						<li><a href="#" onclick="Mostrar(<?= $linea['id_destacado']; ?>); return false;" class="icon-visibility_off"></a></li>
         			<?php } ?>
-        			<li><a href="#" class="icon-mode_edit"></a></li>
-        			<li><a href="#" class="icon-delete"></a></li>
+        			<li><a href="#" onclick="Editar(<?= $linea['id_destacado']; ?>); return false;" class="icon-mode_edit"></a></li>
+        			<li><a href="#" onclick="Eliminar(<?= $linea['id_destacado']; ?>); return false;" class="icon-delete"></a></li>
         		</ul>
         	</li>
 		<?php }
