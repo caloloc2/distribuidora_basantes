@@ -11,6 +11,7 @@ try{
 			<li class="item">
         		<div class="cabeza">        			
         			<h2><?= $linea['descripcion']; ?></h2>
+                                <h2><?= number_format($linea['precio'], 2); ?></h2>
         		</div>        		
         		<figure><img src="../img/destacados/<?= $linea['imagen']; ?>" alt="<?= $linea['descripcion']; ?>"></figure>
         		<ul class="opciones">
