@@ -4,7 +4,7 @@ require 'meta.php';
 
 try{
 
-	$consulta = Meta::Consulta('SELECT * FROM destacados');
+	$consulta = Meta::Consulta('SELECT * FROM destacados ORDER BY id_destacado DESC');
 
 	if (count($consulta)>0){
 		foreach ($consulta as $linea) { ?>

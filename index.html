@@ -86,59 +86,11 @@
             </div>
         </div>
 
-        <div id="seccion">
+        <div id="seccion" id="destacados">
             <h1 class="titulo">Productos Destacados</h1>
 
             <div class="contenido">
                 <ul id="productos">
-                    
-                    <li class="item">
-                        <figure>
-                            <img src="img/destacados/image8.jpg" alt="">
-                        </figure>
-                        
-                        <div class="barra">
-                            <h1>Lona Venus</h1>
-                            <!-- <p>Descripcion del producto</p> -->
-                            <p class="precio">$ 10,00 USD</p>
-                        </div>
-                    </li>
-
-                    <li class="item">
-                        <figure>
-                            <img src="img/destacados/image11.jpg" alt="">
-                        </figure>
-                        
-                        <div class="barra">
-                            <h1>Lona Venus</h1>
-                            <!-- <p>Descripcion del producto</p> -->
-                            <p class="precio">$ 10,00 USD</p>
-                        </div>
-                    </li>
-
-                    <li class="item">
-                        <figure>
-                            <img src="img/destacados/image9.jpg" alt="">
-                        </figure>
-                        
-                        <div class="barra">
-                            <h1>Lona Venus</h1>
-                            <!-- <p>Descripcion del producto</p> -->
-                            <p class="precio">$ 10,00 USD</p>
-                        </div>
-                    </li>
-
-                    <li class="item">
-                        <figure>
-                            <img src="img/destacados/image1.jpg" alt="">
-                        </figure>
-                        
-                        <div class="barra">
-                            <h1>Lona Venus</h1>
-                            <!-- <p>Descripcion del producto</p> -->
-                            <p class="precio">$ 14,00 USD</p>
-                        </div>
-                    </li>
 
                 </ul>
             </div>
@@ -195,32 +147,58 @@
             <p>Hecho con <span class="icon-heart"></span> - Nibemi.com</p>
         </div>
 
-<script>
-  function initMap() {
-    var myLatLng = {lat: -0.216922, lng: -78.514336};
-
-    // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('mapa'), {
-      center: myLatLng,
-      scrollwheel: false,
-      zoom: 18
-    });
-
-    // Create a marker and set its position.
-    var marker = new google.maps.Marker({
-      map: map,
-      position: myLatLng,
-      title: 'Distribuidora Basantes'
-    });
-  }
-
-</script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5vJEqltINZY95AvLFA2Htsl6QjFOYWnw&callback=initMap" async defer></script>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/main.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jcider/latest/jcider.min.js"></script>
+
+<script>
+
+    $('document').ready(function(){
+        Busqueda();
+    })
+
+    function Busqueda(){        
+        $.ajax({
+            url: 'gestion/includes/destacados_web.php',
+            dataType: 'html',
+            success: function(datos) {
+                console.log(datos);
+                if (datos.trim()!=''){
+                    $('#productos').html(datos);
+                    $('#destacados').show();
+                }else{
+                    $('#productos').html('');
+                    $('#destacados').hide();
+                }
+                
+            }
+        });
+    }
+
+    function initMap() {
+        var myLatLng = {lat: -0.216922, lng: -78.514336};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('mapa'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 18
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+          map: map,
+          position: myLatLng,
+          title: 'Distribuidora Basantes'
+        });
+    }
+
+</script>
+        
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
