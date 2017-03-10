@@ -5234,40 +5234,17 @@ class Meta
      * @param $edad         nueva descripcion 
      * @return PDOStatement
      */
-    public static function Nueva_Cotizacion($version, $elaboracion, $solicitud, $dias, $numero, $condiciones, $id_cliente, $id_cliente_facturar, 
-        $muestreado, $prioridad, $tipo_muestreo, $subtotal, $descuento, $impuesto, $total, $id_usuario, $estado, $observaciones, $logistica, $descuento_logistica, $cantidad_logistica)
+    public static function Nuevo($imagen, $descripcion, $precio)
     {
         // Sentencia INSERT
-        $comando = "INSERT INTO cotizaciones (version, fecha_elaboracion, fecha_solicitud, dias_vigencia, num_cotizacion, id_condiciones, id_cliente, 
-            id_cliente_factura, muestreado_por, prioridad, tipo_muestreo, descuento, subtotal, impuesto, 
-            total, id_usuario, estado, impreso, enviado, razon_perdida, observaciones, logistica, descuento_logistica, cantidad_logistica) VALUES( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,0,'',?,?,?,?)";
+        $comando = "INSERT INTO destacados (imagen, descripcion, precio) VALUES( ?,?,? )";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
 
         return $sentencia->execute(
             array(
-                $version,
-                $elaboracion,
-                $solicitud,
-                $dias,
-                $numero,
-                $condiciones,
-                $id_cliente_facturar,
-                $id_cliente,
-                $muestreado,
-                $prioridad,
-                $tipo_muestreo,
-                $descuento,
-                $subtotal,
-                $impuesto,
-                $total,
-                $id_usuario,
-                $estado,
-                $observaciones,
-                $logistica,
-                $descuento_logistica, 
-                $cantidad_logistica
+                $imagen, $descripcion, $precio
             )
         );
 

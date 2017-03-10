@@ -4,17 +4,13 @@ $respuesta['estado'] = false;
 
 try{
 	require 'meta.php';
+	
+	$descripcion = $_POST['descripcion_nuevo'];
+	$precio = $_POST['precio_nuevo'];
 
-	$id = $_POST['id_destacado_editar'];
-	$descripcion = $_POST['descripcion_editar'];
-	$precio = $_POST['precio_editar'];
-
-	$actualiza = Meta::Actualizar_Campo('destacados', 'descripcion', $descripcion, 'id_destacado', $id);
-	$actualiza = Meta::Actualizar_Campo('destacados', 'precio', $precio, 'id_destacado', $id);
-
-	if (isset($_FILES["imagen_editar"]))
+	if (isset($_FILES["imagen_nuevo"]))
 	{
-	    $file = $_FILES["imagen_editar"];
+	    $file = $_FILES["imagen_nuevo"];
 	    $nombre = $file["name"];
 	    $tipo = $file["type"];
 	    $ruta_provisional = $file["tmp_name"];
@@ -45,7 +41,7 @@ try{
 	        $src = $carpeta.$nombre;
 	        move_uploaded_file($ruta_provisional, $src);
 
-	        $actualiza = Meta::Actualizar_Campo('destacados', 'imagen', $nombre, 'id_destacado', $id);
+	        $nuevo = Meta::Nuevo($nombre, $descripcion, $precio);
 	        $respuesta['estado'] = true;	
 	    }
 	}
